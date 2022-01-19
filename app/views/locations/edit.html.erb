@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="text-center">Update Location</h3>
+		</div>
+
+		<div class="panel-body">
+			<%= form_for(@location, url: location_path, html: { class: "form-horizontal", autocomplete: "off" }) do |f| %>
+            <%= render 'form', f: f %>
+			<div class="row form-group">
+				<center><%= f.submit "Update Location", class: "btn btn-success btn-sm" %></center>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

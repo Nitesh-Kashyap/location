@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "image" %>
+
+<!-- Section-->
+<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+  <div class="col mb-5">
+    <div class="card h-100">
+      <div class="container-fluid">
+        <div class="row text-xs-center">
+          <% if @location.image.present? %>
+            <h3 class="headermessage"><%= @location.name %> Images</h3>
+          <% end %>
+        </div>
+        <div class="row">
+          <% @location.image.each do |image| %>
+          <div class="image-block col-sm-4" style="no-repeat center top;background-size:cover;">
+            <%= image_tag(image, class: 'card-img-top') if image.present? %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- Location details-->
+      <div class="card-body p-4">
+        <div class="text-center">
+          <h5 class="fw-bolder"><%#= @location.name %></h5>
+          <!-- Product Description-->
+          <div class="d-flex justify-content-center small text-warning mb-2">
+            <h4><%= @location.description %><h4>
+            </div>
+            <h6 class="fw-bolder">
+              Address: <%= @location.address %> | Latitude: <%= @location.latitude %>, Longitude: <%= @location.longitude %>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
