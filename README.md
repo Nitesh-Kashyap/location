@@ -1,2 +1,2 @@
 # location
-A web application with Devise, Active storage and Gecoder
+* A web application with Devise, Active storage and Gecoder
